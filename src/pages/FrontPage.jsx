@@ -89,7 +89,7 @@ export default function FrontPage() {
         id="testid"
         createdTime="2019-08-03 15:50"
         type="Doujinshi"
-        Uploader="exxhentaiUploader"
+        uploader="exxhentai"
         comictag="40010"
       />
 

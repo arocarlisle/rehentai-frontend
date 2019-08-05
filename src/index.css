@@ -27,3 +27,8 @@ a {
 a:visited {
   color: #5C0D11;
 }
+tr>td {
+  position: relative;
+  padding: 3px 4px;
+  border-right: 1px solid #D9D7CC;
+}

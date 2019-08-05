@@ -175,48 +175,53 @@ export default function GalleryListThumbnailItem({
   id,
   type,
   createdTime,
+  comictag,
+  uploader,
 }: GalleryListThumbnailItemProps) {
   return (
     <MainContainer>
-      <a href={`/g/${id}`}>
-        <Container>
-          <Mainlistview>
-            <Mainlisthead>
-              <Listheadtag>Tag</Listheadtag><ListPublished>Published</ListPublished><ListTitle>Title</ListTitle><ListUploader>Uploader</ListUploader>
-              </Mainlisthead>
-            <Mainlistviewtr>
-              
-              <MainlistviewMetaDatas>
-                <MetaDatas>
-                  <Tag type={type} />
-                </MetaDatas>
-              </MainlistviewMetaDatas>
-              <MainlistviewDateTime>
-                <DateTimeDiv>
-                  <DateTime>{createdTime}</DateTime>
-                </DateTimeDiv>
-                <Dirdown>
-                <Dirstar></Dirstar>
-                <Gtdown></Gtdown>
-                </Dirdown>
-              </MainlistviewDateTime>
 
-              <MainlistviewTitle>
+      <Container>
+        <Mainlistview>
+          <Mainlisthead>
+            <Listheadtag>Tag</Listheadtag><ListPublished>Published</ListPublished><ListTitle>Title</ListTitle><ListUploader>Uploader</ListUploader>
+          </Mainlisthead>
+          <Mainlistviewtr>
+
+            <MainlistviewMetaDatas>
+              <MetaDatas>
+                <a href={`/g/${type}`}><Tag type={type} /></a>
+              </MetaDatas>
+            </MainlistviewMetaDatas>
+            <MainlistviewDateTime>
+              <DateTimeDiv>
+                <DateTime>{createdTime}</DateTime>
+              </DateTimeDiv>
+              <Dirdown>
+                <Dirstar></Dirstar>
+                <a href={`/g/${title}`}><Gtdown></Gtdown></a>
+              </Dirdown>
+            </MainlistviewDateTime>
+
+
+            <MainlistviewTitle>
+              <a href={`/g/${title}`}>
                 <Comicname>
                   <Title>{title}</Title>
                 </Comicname>
                 <Thumbnail src={thumbnail} alt={title} />
                 <Comictag>
-                  {id}
+                  {comictag}
                 </Comictag>
-              </MainlistviewTitle>
-              <MainlistviewUploader>
-                <Uploader>{id}</Uploader>
-              </MainlistviewUploader>
-            </Mainlistviewtr>
-          </Mainlistview>
-        </Container>
-      </a>
+              </a>
+            </MainlistviewTitle>
+            <MainlistviewUploader>
+              <a href={`/g/${uploader}`}><Uploader>{uploader}</Uploader></a>
+            </MainlistviewUploader>
+          </Mainlistviewtr>
+        </Mainlistview>
+      </Container>
+
     </MainContainer>
   );
 }
